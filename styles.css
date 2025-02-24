@@ -1,0 +1,302 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Container centralizado */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estilo do Header (Hero Section) */
+.hero {
+    background: linear-gradient(to right, #111, #333);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Efeito de digitação */
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    word-spacing: 5px; /* Adiciona espaçamento entre palavras */
+    white-space: normal;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* Animação para os subtítulos */
+.hero-content h2, .hero-content p {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.hero-content h2 {
+    font-size: 22px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    animation-delay: 0.5s;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    animation-delay: 1s;
+}
+
+/* Cursor piscante no efeito de digitação */
+.cursor {
+    display: inline-block;
+    width: 6px;
+    height: 24px;
+    background-color: white;
+    margin-left: 5px;
+    animation: blink 0.8s infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Estilizando Botões */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: #d9534f;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #c9302c;
+    box-shadow: 0 0 10px rgba(217, 83, 79, 0.8);
+}
+
+/* Botão CTA com efeito */
+.cta .btn {
+    background-color: #f0ad4e;
+    color: black;
+}
+
+.cta .btn:hover {
+    background-color: #ec971f;
+    box-shadow: 0 0 15px rgba(240, 173, 78, 0.8);
+}
+
+/* Estilizando a imagem do livro */
+.book-cover {
+    width: 300px;
+    margin-top: 20px;
+    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.book-cover:hover {
+    transform: scale(1.05);
+}
+
+/* Seções */
+section {
+    padding: 60px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Efeito de fade-in ao rolar */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Estilização das seções */
+.about, .benefits, .author {
+    background-color: #f5f5f5;
+    padding: 50px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Parágrafos */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Lista de Benefícios */
+.benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits ul li {
+    font-size: 18px;
+    padding: 10px;
+    background: white;
+    margin: 10px auto;
+    max-width: 500px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.benefits ul li:hover {
+    transform: scale(1.05);
+}
+
+/* Rodapé e Call to Action */
+.cta {
+    background-color: #222;
+    color: white;
+    padding: 40px 0;
+}
+
+/* Efeitos de animação */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    
+    .hero-content h2 {
+        font-size: 18px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .book-cover {
+        width: 250px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+}
+/* Estilo do Modal */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro com transparência */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Quando o modal for ativado pelo JavaScript */
+.modal.show {
+    display: flex;
+}
+
+/* Conteúdo do Modal */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Botão dentro do Modal */
+.modal-content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background: #d9534f;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-content button:hover {
+    background: #c9302c;
+}
+.video-section {
+    background-color: #f5f5f5;
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* Para telas grandes (desktop) */
+@media (min-width: 769px) {
+    .video-container {
+        position: relative;
+        width: 60%;           /* Ajuste aqui para deixar mais estreito ou mais largo */
+        max-width: 800px;     /* Largura máxima */
+        margin: 0 auto;
+        padding-bottom: 40%;  /* Menor altura => formato mais horizontal que 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Para telas menores (celular/tablet) */
+@media (max-width: 768px) {
+    .video-container {
+        position: relative;
+        width: 90%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding-bottom: 56.25%; /* Mantém o formato 16:9, mais comum em vídeos */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
