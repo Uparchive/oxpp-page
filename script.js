@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
             showModal();
             closeModal.onclick = function () {
-                closeModalAndRedirect("https://pay.hotmart.com/K98281319H");
+                closeModalAndRedirect("https://pay.hotmart.com/K98281319H?off=ensy7ak0");
             };
         });
     }
